@@ -6,4 +6,11 @@
 - Search to get hero's name starting with based on string
 - Credentials are hidden in the .env file added in gitignore
 
-Live url: https://62359ef0ea8e55229cdaa011--unruffled-curran-1ee4d3.netlify.app/
+
+#### How to run this project
+
+- Clone the project
+- Run `npm install` inside the root directory
+- Run `npm run start` inside the root directory
+
+Live url: https://marvel-heroes-data.netlify.app/
