@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getData } from './services/dataService';
 import { formatHeroName } from './services/helper';
-import Card from './components/Card';
+import { Search, Card } from './components';
 import './main.css';
 
 function App() {
 
-  const [heroes, setHeroes] = useState([])
-  const [loader, setLoader] = useState(false)
+  const [heroes, setHeroes] = useState([]);
+  const [loader, setLoader] = useState(false);
+  const [error, setError] = useState(false)
 
   useEffect(() => {
     setLoader(true)
@@ -20,6 +21,10 @@ function App() {
         })
         setHeroes(heroesWithFormattedName)
       })
+      .catch((error) => {
+        setLoader(false)
+        setError(true)
+      })
   }, [])
 
   if (loader) return (
@@ -28,9 +33,20 @@ function App() {
     </div>
   )
 
+  if (error) return (
+    <div className="container">
+      An error occurred. Please refresh the page or try again.
+    </div>
+  )
+
   return (
     <div className="container">
-      <Card heroes={heroes} />
+      <Search
+        setHeroes={setHeroes}
+      />
+      <Card
+        heroes={heroes}
+      />
     </div>
   );
 }

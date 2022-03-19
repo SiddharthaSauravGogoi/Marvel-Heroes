@@ -23,8 +23,13 @@ figure {
   margin: 0;
 }
 
-li {
+.card {
   list-style-type: none;
+  cursor: pointer;
+}
+
+.card:hover .card-body {
+  background: #e62429;
 }
 
 .container {
@@ -96,6 +101,14 @@ li {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 1%;
+}
+
+/** search **/
+input {
+  display: block;
+  width: 325px;
+  padding: 1rem 2rem;
+  margin: 1rem 0;
 }
 
 @media screen and (max-width: 760px) {
