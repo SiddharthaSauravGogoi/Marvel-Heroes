@@ -28,7 +28,7 @@ export default function Search({
           setHeroes(heroesWithFormattedName)
         })
     }
-  }, 300)
+  }, 1000)
 
   return (
     <input

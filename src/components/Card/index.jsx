@@ -3,7 +3,7 @@ import React from 'react';
 export default function Card({ heroes }) {
   return (
     <ul className='grid'>
-      {heroes.map((character) => (
+      {heroes.length ? heroes.map((character) => (
         <li key={character.id} className="card">
           <div className="thumbnail">
             <figure className="img__wrapper">
@@ -19,7 +19,9 @@ export default function Card({ heroes }) {
             </p>
           </div>
         </li>
-      ))}
+      )) : <p> No results to show </p>}
+
+
     </ul>
   )
 }
